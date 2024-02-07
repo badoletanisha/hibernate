@@ -1,0 +1,161 @@
+`package com.jsp.hibernate.CriteriaQuery;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaDelete;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.CriteriaUpdate;
+import javax.persistence.criteria.Root;
+import javax.persistence.metamodel.EntityType;
+
+import org.hibernate.Criteria;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+import org.hibernate.criterion.Order;
+import org.hibernate.criterion.Restrictions;
+import org.hibernate.query.Query;
+
+public class App 
+{
+	public static void main( String[] args )
+	{
+		Configuration cfg = new Configuration().configure().addAnnotatedClass(Fruits.class);
+		SessionFactory sf = cfg.buildSessionFactory(); 
+		Session session= sf.openSession();        
+		Transaction trans= session.beginTransaction();
+		
+//		**********************************************************
+//		                  Fruits class code
+//		**********************************************************
+
+		//		criteria Query execution(legacy code)
+		
+		//		select * from fruits
+		//		Criteria criteria=session.createCriteria(Fruits.class);
+		//		List<Fruits> list=criteria.list();
+		//		for(Fruits f : list) {
+		//			System.out.println(f);
+		//		}
+		//	***************************************************************************************************************
+
+		//		select fid from fruits where fid=1
+
+		//		Criteria criteria =session.createCriteria(Fruits.class).add(Restrictions.eq("fId", 1));
+		//		Fruits  uniqueResult=(Fruits)criteria.uniqueResult();
+		//		System.out.println(uniqueResult);
+
+		//	***************************************************************************************************************
+
+		//	select *from fruits where fname like %an%
+
+		//		Criteria criteria=session.createCriteria(Fruits.class).add(Restrictions.like("fName", "%an%"));
+		//		List<Fruits>list = criteria.list();
+		//		for(Fruits f:list) {
+		//			System.out.println(f);
+		//		}
+
+		//	***************************************************************************************************************
+		//  select  * from fruits where fname like %ap%
+		//		Criteria criteria = session.createCriteria(Fruits.class).add(Restrictions.not(Restrictions.like("fName", "App")));
+		//		List<Fruits>list = criteria.list();
+		//		for(Fruits f : list) {
+		//			System.out.println(f);
+
+		//	***************************************************************************************************************
+		//	CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+		//	CriteriaQuery<Fruits> createQuery=criteriaBuilder.createQuery(Fruits.class);
+		//	Root<Fruits>root =createQuery.from(Fruits.class);
+		//	createQuery.select(root);
+		//	createQuery.where(criteriaBuilder.lessThan(root.get("fPrice"), "200"));
+		//	Query<Fruits> query= session.createQuery(createQuery);
+		//	List<Fruits> resultList = query.getResultList();
+		//	for(Fruits f : resultList) {
+		//		System.out.println(f);
+		//	}
+		//	trans.commit();
+		//	session.close();
+
+		//************************************************************************************************
+		//		update Query Execution
+
+		//	CriteriaBuilder criteriaBuilder = session.getCriteriaBuilder();
+		//	CriteriaUpdate<Fruits> criteriaUpdate = criteriaBuilder.createCriteriaUpdate(Fruits.class);
+		//	Root<Fruits> root = criteriaUpdate.from(Fruits.class);
+		//	criteriaUpdate.set("fPrice", 600);
+		//	criteriaUpdate.where(criteriaBuilder.equal(root.get("fPrice"),"150"));
+		//	session.createQuery(criteriaUpdate).executeUpdate();
+		//	trans.commit();
+		//	session.close();
+
+		//		**********************************************************************************************
+		//        Delete Query Execution
+
+			CriteriaBuilder cb = session.getCriteriaBuilder();
+			CriteriaDelete<Fruits> createcriteriaDelete = cb.createCriteriaDelete(Fruits.class);
+			Root<Fruits> root = createcriteriaDelete.from(Fruits.class);
+			createcriteriaDelete.where(cb.equal(root.get("fName"), "apple"));
+			session.createQuery(createcriteriaDelete).executeUpdate();
+		
+			
+//		**********************************************************
+//        product and Consumer class code
+//      **********************************************************
+		
+//		Configuration cfg = new Configuration().configure().addAnnotatedClass(Product.class).addAnnotatedClass(Consumer.class);
+//		SessionFactory sf = cfg.buildSessionFactory(); 
+//		Session session= sf.openSession();        
+//		Transaction trans= session.beginTransaction();
+		
+		
+		
+//		**********************************************************
+//                         Employee class code
+//      **********************************************************		
+		
+		
+		Configuration cfg1 = new Configuration().configure().addAnnotatedClass(Employee.class);
+		SessionFactory sf1 = cfg.buildSessionFactory(); 
+		Session session1= sf1.openSession();        
+		Transaction trans1= session.beginTransaction();
+		
+//		using the greaterThan() to find which player is getting highest salary
+		
+		CriteriaBuilder criteriaBuilder=session.getCriteriaBuilder();
+		CriteriaQuery<Employee> createQuery=criteriaBuilder.createQuery(Employee.class);
+		Root<Employee> root2=createQuery.from(Employee.class);
+         createQuery.select(root2);
+         createQuery.where(criteriaBuilder.greaterThan(root.get("employeeSalary"), 7000000));
+         Query<Employee> query=session.createQuery(createQuery);
+         List<Employee> resultList = query.getResultList();
+         for(Employee emp : resultList) {
+        	 System.out.println(emp);
+         }
+		
+//******************************************************************************************************		
+//	          orderBy Query 
+		
+		CriteriaBuilder criteriaBuilder1 = session.getCriteriaBuilder();
+		CriteriaQuery<Employee> selectQuery=session.getCriteriaBuilder().createQuery(Employee.class);
+		Root<Employee> root1 = selectQuery.from(Employee.class);
+     	selectQuery.orderBy(criteriaBuilder.desc(root.get("employeeId")));
+		Query<Employee> query1=session.createQuery(selectQuery);
+		List<Employee> list = query.list();
+		for(Employee e: list) {
+			System.out.println(e);
+		}
+		trans.commit();
+		session.close();
+
+	}
+}
+
+
+
+
+

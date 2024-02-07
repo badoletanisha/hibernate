@@ -1,0 +1,56 @@
+package com.jsp.hibernate.MyFirstHibProject;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+
+
+@Entity
+//@Table(name="company_employee")
+
+public class Employee {
+//@OneToOne
+	@Id
+//	@Column(name = "company_empId")
+	private int empId;
+//	@Column(name = "company_empName")
+	private String empName;
+//	@Column(name = "company_empSal")
+	private int empSal;
+	private Company Company;
+	
+	public Company getCompany() {
+		return Company;
+	}
+	public void setCompany(Company company) {
+		Company = company;
+	}
+	public int getEmpId() {
+		return empId;
+	}
+		public void setEmpId(int empId) {
+		this.empId = empId;
+	}
+	public String getEmpName() {
+		return empName;
+	}
+	public void setEmpName(String empName) {
+		this.empName = empName;
+	}
+	public int getEmpSal() {
+		return empSal;
+	}
+	public void setEmpSal(int empSal) {
+		this.empSal = empSal;
+	}
+	@Override
+	public String toString() {
+		return "Employee [empId=" + empId + ", empName=" + empName + ", empSal=" + empSal + "]";
+	}
+
+
+
+
+}

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="C:\Users\sujal\OneDrive\Desktop\Hibernate\Level_2Caching_Memory"/>
+			<item value="C:\Users\sujal\OneDrive\Desktop\Hibernate\Level_2Caching_Memory\pom.xml"/>
+			<item value="C:\Users\sujal\OneDrive\Desktop\Hibernate\CriteriaQuery\src\main\java\com\jsp\hibernate\CriteriaQuery\App.java"/>
+			<item value="C:\Users\sujal\OneDrive\Desktop\Hibernate\Level_1Caching_Memory\src\main\java\com\jsp\hibernate\level_1caching_memory\App.java"/>
+			<item value="C:\Users\sujal\OneDrive\Desktop\Hibernate\Mapping\src\main\java\com\jsp\hibernate\Mapping\House.java"/>
+			<item value="C:\Users\sujal\OneDrive\Desktop\Hibernate\OneToManyMapping"/>
+			<item value="C:\Users\sujal\OneDrive\Desktop\Hibernate\HQLProject\src\main\java\com\jsp\hibernate\hqlproject\App.java"/>
+			<item value="C:\Users\sujal\OneDrive\Desktop\Hibernate\Mapping\src\main\java\com\jsp\hibernate\Mapping\App.java"/>
+			<item value="C:\Users\sujal\OneDrive\Desktop\Hibernate\Mapping\src\main\java\com\jsp\hibernate\Mapping\Cart.java"/>
+			<item value="C:\Users\sujal\OneDrive\Desktop\Hibernate\Mapping\src\main\java\com\jsp\hibernate\Mapping\Person.java"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<item key="catalog" value="internal"/>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+			<item value="com.jsp.hibernate.PracticeProgram"/>
+			<item value="com.jsp.hibernate.JAP_Level_2_caching_Memory"/>
+			<item value="com.jsp.hibernate.JPA_CriteriaQuery"/>
+			<item value="com.jsp.hibernate.JPA_Level_1Caching_Memory"/>
+			<item value="com.jsp.hibernate.jpa_manytomanymapping"/>
+			<item value="com.jsp.hibernate.jpa_manytoonemapping"/>
+			<item value="com.jsp.hibernate.JPA_OneToManyMapping"/>
+			<item value="com.jsp.hibernate.jpa_onetoonemapping"/>
+			<item value="com.jsp.hibernate.JavaPersistenceAPI"/>
+			<item value="com.jsp.hibernate.javapersistenceAPI_jpa"/>
+			<item value="com.jsp.hibernate.level_2caching_memory"/>
+			<item value="com.jsp.hibernate.level_1caching_memory"/>
+			<item value="com.jsp.hibernate.HibernateCachingMemory"/>
+			<item value="com.jsp.hibernate.CriteriaQuery"/>
+			<item value="com.jsp.hibernate.hqlproject"/>
+		</list>
+		<list key="groupId">
+			<item value="com.jsp.hibernate"/>
+		</list>
+		<list key="artifactId">
+			<item value="PracticeProgram"/>
+			<item value="JAP_Level_2_caching_Memory"/>
+			<item value="JPA_CriteriaQuery"/>
+			<item value="JPA_Level_1Caching_Memory"/>
+			<item value="JPA_ManyToManyMapping"/>
+			<item value="JPA_ManyToOneMapping"/>
+			<item value="JPA_OneToManyMapping"/>
+			<item value="JPA_OneToOneMapping"/>
+			<item value="JavaPersistenceAPI"/>
+			<item value="JavaPersistenceAPI_JPA"/>
+			<item value="Level_2Caching_Memory"/>
+			<item value="Level_1Caching_Memory"/>
+			<item value="HibernateCachingMemory"/>
+			<item value="CriteriaQuery"/>
+			<item value="HQLProject"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+</section>
